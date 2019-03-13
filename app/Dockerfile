@@ -11,18 +11,11 @@ COPY ./src /tmp/src
 #RUN cp -av /tmp/src/actions/apt-get/sources.list /etc/apt/
 
 RUN apt-get update
-
 RUN echo "[ ***** ***** ***** ] - Installing each item in new command to use cache and avoid download again ***** ***** ***** "
-RUN apt-get install -y apt-utils libfreetype6-dev && \
-    libjpeg62-turbo-dev libcurl4-gnutls-dev && \
-    libxml2-dev freetds-dev git wget mysql-client vim telnet
 
-# IMAP and LDAP requirements
-RUN apt-get install libldap2-dev openssl libc-client2007e-dev libkrb5-dev -y && \
-    docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu && \
-    docker-php-ext-install -j$(nproc) ldap && \
-    docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
-    docker-php-ext-install -j$(nproc) imap
+RUN apt-get install -y apt-utils libfreetype6-dev
+
+RUN apt-get install -y  git wget mysql-client vim telnet
 
 # BCMath is needed on Scleroseforeningen D8
 RUN docker-php-ext-install -j$(nproc) bcmath && \
@@ -32,21 +25,6 @@ RUN docker-php-ext-install -j$(nproc) bcmath && \
 RUN apt-get install -y ca-certificates
 
 RUN echo "[ ***** ***** ***** ] - Installing PHP Dependencies ***** ***** ***** "
-
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
-RUN docker-php-ext-install gd
-RUN docker-php-ext-install soap
-
-# opcache
-RUN apt-get install -y zlib1g-dev libicu-dev libpq-dev \
-    && docker-php-ext-install opcache \
-    && docker-php-ext-install intl \
-    && docker-php-ext-install mbstring \
-    && pecl install apcu-5.1.5 \
-    && docker-php-ext-enable apcu
-
-# Install xmlrpc
-RUN docker-php-ext-install xmlrpc
 
 RUN docker-php-ext-install calendar
 RUN apt-get install -y libpq-dev && docker-php-ext-install pdo
