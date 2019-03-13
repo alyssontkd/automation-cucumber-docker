@@ -3,16 +3,16 @@ set -e
 
 git_user='alyssontkd'
 git_pswd='#Magatti1981#'
-app_dir='/var/www/html/dev.petshop.com.br'
+app_dir='/var/www/html/petshop.com.br'
 repo_cred_file="${app_dir}/.git-credentials"
 script_banco='/var/www/html/script_carga.sql'
 path_remote_origin='https://github.com/alyssontkd/app-petshop.git'
 
 echo "[ ****************** ] Starting Endpoint of Application"
-if ! [ -d "/var/www/html/dev.petshop.com.br/classes" ]; then
-    echo "Application not found in /var/www/html/dev.petshop.com.br - Downloading now..."
+if ! [ -d "/var/www/html/petshop.com.br/classes" ]; then
+    echo "Application not found in /var/www/html/petshop.com.br - Downloading now..."
     if [ "$(ls -A)" ]; then
-        echo "WARNING: /var/www/html/dev.petshop.com.br is not empty - press Ctrl+C now if this is an error!"
+        echo "WARNING: /var/www/html/petshop.com.br is not empty - press Ctrl+C now if this is an error!"
         ( set -x; ls -A; sleep 10 )
     fi
     echo "[ ****************** ] Execute the clone of the GLPI POUPEX"
