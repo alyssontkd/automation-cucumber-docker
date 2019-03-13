@@ -1,0 +1,15 @@
+#  Acessos do super usuário (Docker)
+ usuario_1: "usuario1"
+ user_senha_1: "12345678"
+
+ # Acessos do atendente do chamado (Docker)
+ atendente_1: "atendente1"
+ atenden_senha_1: "12345678"
+
+ usuario_2: "usuario2"
+ user_senha_2: "12345678"
+
+ # Acessos do atendente do chamado (Docker)
+ atendente_2: "atendente2"
+ atenden_senha_2: "12345678"
+
