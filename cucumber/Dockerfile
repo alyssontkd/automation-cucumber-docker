@@ -33,7 +33,7 @@ RUN apt-get install -y chromedriver
 COPY ./src/poupex.com.br.crt /usr/local/share/ca-certificates/
 RUN update-ca-certificates
 
-WORKDIR /usr/src/app/cucumber-glpi
+WORKDIR /usr/src/app/cucumber-petshop
 RUN /bin/bash -c "ruby --version && gem update --system && gem install bundler && gem update"
 
 COPY docker-entrypoint.sh /usr/local/bin/
