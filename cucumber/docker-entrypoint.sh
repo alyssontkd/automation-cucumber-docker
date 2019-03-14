@@ -32,7 +32,7 @@ cd ${cucumber_dir}
 pwd
 git remote update
 git reset --hard origin/master
-git describe --tags
+git describe --tags --always
 echo "[ ****************** ] OK! Clone Successfull!"
 
 echo "[ ****************** ] Instalando as dependencias do Cucumber........."
