@@ -5,5 +5,6 @@ bdd: --format pretty
 progress: --format progress
 json: --format json --out=log/resultado.json
 docker: AMBIENTE=docker
-cucumber: features/specs/cadastro-chamado/cadastro-chamado.feature features/specs/atende-chamado-cadastrado/atende-chamado-cadastrado.feature features/specs/usuario-reprova-chamado/usuario-reprova-chamado.feature features/specs/atende-chamado-reprovado/atende-chamado-reprovado.feature features/specs/usuario-aprova-chamado/usuario-aprova-chamado.feature
+# cucumber: features\specs\cadastro-dono\cadastro-dono.feature features\specs\atende-chamado-cadastrado\atende-chamado-cadastrado.feature features\specs\usuario-reprova-chamado\usuario-reprova-chamado.feature features\specs\atende-chamado-reprovado\atende-chamado-reprovado.feature features\specs\usuario-aprova-chamado\usuario-aprova-chamado.feature
+cucumber: features/specs/cadastro-dono/cadastro-dono.feature
 
