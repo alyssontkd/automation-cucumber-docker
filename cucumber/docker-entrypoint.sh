@@ -41,6 +41,7 @@ cp -av /tmp/env.rb ${cucumber_dir}/features/support
 #cp -av /tmp/Gemfile ${cucumber_dir}
 #cp -av /tmp/Gemfile.lock ${cucumber_dir}
 cp -av /tmp/cucumber.yaml ${cucumber_dir}
+rm -f ${cucumber_dir}/features/support/linux.env.rb features/support/windows.env.rb
 
 bundle install
 bundle update --all
