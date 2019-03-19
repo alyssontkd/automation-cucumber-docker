@@ -13,9 +13,9 @@ services:
         - "8003:80" #Porta mapeada no proxy reverso
         - "4444:443"
      volumes:
-        - /var/www/docker/vertenti-pipiline/app:/var/www/html/petshop.com.br
-        - /var/www/docker/vertenti-pipiline/cucumber/petshop/log:/var/www/html/petshop.com.br/log #resultados dos testes
-        - /var/www/docker/vertenti-pipiline/apache/logs:/var/log/apache2
+       - /var/www/docker/vertenti-pipiline/app:/var/www/html/petshop.com.br
+       - /var/www/docker/vertenti-pipiline/app/log:/var/www/html/petshop.com.br/log #resultados dos testes
+       - /var/www/docker/vertenti-pipiline/apache/logs:/var/log/apache2
      environment:
         - APPLICATION_ENV=development
      links:
@@ -48,5 +48,7 @@ services:
      image: vertenti/cucumber-pipeline
      container_name: 'cucumber-pipeline'
      shm_size: 512M
+     command: chmod -R 777 /usr/src/app/cucumber-petshop/log
      volumes:
-        - /var/www/docker/vertenti-pipiline/cucumber/petshop:/usr/src/app/cucumber-petshop
+       - /var/www/docker/vertenti-pipiline/cucumber/petshop:/usr/src/app/cucumber-petshop
+       - /var/www/docker/vertenti-pipiline/app/log:/usr/src/app/cucumber-petshop/log #resultados dos testes
