@@ -14,6 +14,7 @@ services:
         - "4444:443"
      volumes:
         - /var/www/docker/vertenti-pipiline/app:/var/www/html/petshop.com.br
+        - /var/www/docker/vertenti-pipiline/cucumber/petshop/log:/var/www/html/petshop.com.br/log #resultados dos testes
         - /var/www/docker/vertenti-pipiline/apache/logs:/var/log/apache2
      environment:
         - APPLICATION_ENV=development
@@ -46,13 +47,6 @@ services:
  #    restart: always
      image: vertenti/cucumber-pipeline
      container_name: 'cucumber-pipeline'
-#     privileged: true
-#     command: Xvfb :20 -screen 0 1366x768x16
-#     command: tail -f /dev/null
      shm_size: 512M
-     #environment:
-     #   - DISPLAY=:99
-     #   - APPLICATION_ENV=development
      volumes:
         - /var/www/docker/vertenti-pipiline/cucumber/petshop:/usr/src/app/cucumber-petshop
-#     tty: true
