@@ -42,11 +42,11 @@ cp -av /tmp/cucumber.yaml ${cucumber_dir}
 rm -f ${cucumber_dir}/features/support/linux.env.rb features/support/windows.env.rb
 
 cd ${cucumber_dir}
-chmod -R 777 chmod -R 777 ${cucumber_dir}/log
+
 bundle install
 bundle update --all
 gem update
-cucumber
+#cucumber
 
 exec "$@"
 
