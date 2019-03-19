@@ -29,8 +29,8 @@ COPY ./src/env.rb /tmp
 # Update the package list and install chrome
 #RUN apt-get update -qq && apt-get install -y google-chrome-stable ttf-mscorefonts-installer
 
-# chromeDriver v2.45
-#RUN apt-get update -qq && apt-get install -y chromedriver
+# ChromeDriver 72.0.3626.122
+RUN apt-get update -qq && apt-get install -y chromedriver
 
 COPY ./src/poupex.com.br.crt /usr/local/share/ca-certificates/
 RUN update-ca-certificates
