@@ -26,7 +26,7 @@ if [ ! -e "${cucumber_dir}/Gemfile" ]; then
     echo "[ ****************** ] Ending Endpoint of Application"
 fi
 echo "[ ****************** ] Rodando o permissionamento...."
-#chmod -R 777 ${cucumber_dir}
+
 echo "[ ****************** ] Arquivo já existe e foi localizado. Acessando diretorio da aplicacao"
 cd ${cucumber_dir}
 pwd
@@ -38,15 +38,15 @@ echo "[ ****************** ] OK! Clone Successfull!"
 echo "[ ****************** ] Instalando as dependencias do Cucumber........."
 cp -av /tmp/config.yml ${cucumber_dir}/features/support
 cp -av /tmp/env.rb ${cucumber_dir}/features/support
-#cp -av /tmp/Gemfile ${cucumber_dir}
-#cp -av /tmp/Gemfile.lock ${cucumber_dir}
 cp -av /tmp/cucumber.yaml ${cucumber_dir}
 rm -f ${cucumber_dir}/features/support/linux.env.rb features/support/windows.env.rb
 
+cd ${cucumber_dir}
+chmod -R 777 chmod -R 777 ${cucumber_dir}/log
 bundle install
 bundle update --all
 gem update
-#cucumber
+cucumber
 
 exec "$@"
 
