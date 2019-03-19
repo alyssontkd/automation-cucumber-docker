@@ -1,11 +1,11 @@
 require 'capybara'
 require 'capybara/cucumber'
 #require 'capybara/rspec'
-#require 'selenium/webdriver'
-#require 'site_prism'
+require 'selenium/webdriver'
+require 'site_prism'
 #require 'faker'
 #require 'rubygems'
-#require 'rspec'
+require 'rspec'
 #require 'rspec/retry'
 
 

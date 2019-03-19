@@ -5,7 +5,7 @@ MAINTAINER Alysson Vicuña <alysson.vicuna@gmail.com>
 
 RUN /bin/bash -c "ruby --version"
 ############################
-RUN apt-get update -qq && apt-get install -y ruby-capybara ruby-capybara-screenshot
+RUN apt-get update -qq && apt-get install -y ruby-capybara ruby-capybara-screenshot vim
 
 ###########################
 # install dependencieis
