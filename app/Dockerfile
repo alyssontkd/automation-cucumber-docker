@@ -1,5 +1,11 @@
 FROM php:7.1.17-apache-jessie
 
+MAINTAINER Alysson Vicuña <alysson.vicuna@gmail.com>
+ARG TIME_ZONE="America/Sao_Paulo"
+# Set the timezone.
+RUN echo ${TIME_ZONE} > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+
 VOLUME ["/var/www/html"]
 
 RUN echo "[ ***** ***** ***** ] - Copying files to Image ***** ***** ***** "

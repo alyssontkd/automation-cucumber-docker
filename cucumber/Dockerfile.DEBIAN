@@ -1,6 +1,10 @@
 FROM ruby:2.6-stretch
 
 MAINTAINER Alysson Vicuña <alysson.vicuna@gmail.com>
+ARG TIME_ZONE="America/Sao_Paulo"
+# Set the timezone.
+RUN echo ${TIME_ZONE} > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 
 RUN /bin/bash -c "ruby --version"
