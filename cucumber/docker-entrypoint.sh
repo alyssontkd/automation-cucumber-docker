@@ -42,11 +42,14 @@ cp -av /tmp/cucumber.yaml ${cucumber_dir}
 rm -f ${cucumber_dir}/features/support/linux.env.rb features/support/windows.env.rb
 
 cd ${cucumber_dir}
-
+pwd
+sleep 20
+echo "************************************** Iniciando a configuração do PROJETO CUCUMBER ************************************** "
 bundle install
 bundle update --all
 gem update
-#cucumber
+cucumber
+tail -f /dev/null
 
 exec "$@"
 
