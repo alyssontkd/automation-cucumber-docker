@@ -1,4 +1,4 @@
-# functional-cucumber-docker
+# regressivo-automatizado-cucumber-docker
 Neste projeto temos a integração entre uma aplicação PHP e uma aplicação CUCUMBER.
 
 Repo da Aplicação: https://github.com/alyssontkd/app-petshop.git
