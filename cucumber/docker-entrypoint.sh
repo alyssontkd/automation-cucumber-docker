@@ -2,7 +2,7 @@
 set -e
 
 git_user='alyssontkd'
-git_pswd='#Magatti1981#'
+git_pswd='senha'
 cucumber_dir='/usr/src/app/cucumber-petshop'
 cucumber_cred_file="${cucumber_dir}/.git-credentials"
 path_remote_origin='https://github.com/alyssontkd/cucumber-petshop.git'
