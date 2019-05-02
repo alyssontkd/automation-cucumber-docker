@@ -2,7 +2,7 @@
 set -e
 
 git_user='alyssontkd'
-git_pswd='#Magatti1981#'
+git_pswd='senha'
 app_dir='/var/www/html/petshop.com.br'
 repo_cred_file="${app_dir}/.git-credentials"
 script_banco='/var/www/html/script_carga.sql'
